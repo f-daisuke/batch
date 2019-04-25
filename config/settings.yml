@@ -1,0 +1,10 @@
+base: &base
+application_batch: &application_batch
+  <<: *base
+  log_path: <%= "#{Rails.root}/log" %>
+
+  tmp_path: <%= "#{Rails.root}/tmp" %>
+  
+  log_logrotate_option:
+    generation: 10
+    size: <%= 100.megabytes %>
